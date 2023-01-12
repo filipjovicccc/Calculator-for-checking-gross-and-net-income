@@ -1,26 +1,26 @@
 import React, {useContext, useState} from "react"
 import Navbar from "./components/Navbar"
 import IncomeForm from "./components/IncomeForm"
-import incomeContext from "./store/income-context.js"
+import incomeContext from "./store/income-context"
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 import Income from "./components/Income"
 
 function App() {
 
-  const{items, setItems} = useContext(incomeContext)
-  const [inputText, setInputText] = useState("");
+  // const{items, setItems} = useContext(incomeContext)
 
-  const addIncome = (item) => {
-  setItems([ 
-    ...items,
-    {text: inputText, id:Math.random()*1000}
-  ])
-  setInputText("")
+  const [items, setItems] = useState([])
+
+
+  const addIncome = (newItems) => {
+ setItems((prevItems) =>{
+  return prevItems.concat(newItems)
+ })
   }
-
   const incomeContextValue = {
     items,
-    setItems
+    setItems,
+ 
   }
   return (
     
@@ -32,13 +32,8 @@ function App() {
        path="/"
        element={
         <IncomeForm
-         items={items} 
-         setItems={setItems} 
          onAdd={addIncome}
-         inputText={inputText}
-         setInputText={setInputText}
-
-
+     
          />
        }
 
@@ -47,8 +42,7 @@ function App() {
         path="income"
         element={
           <Income 
-            items={items}
-          
+   
           />
         }
       />

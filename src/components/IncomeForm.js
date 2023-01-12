@@ -1,29 +1,30 @@
-import React, {useRef, useContext} from "react"
+// const referentIncome = incomeRef
+// if(
+//   referentIncome.current.value.trim().length === 0
+// ){
+//   return alert("Please enter valid information")
+// }
+// const incomeData = {
+  //  income: referentIncome.current.value
+  // }
+  import React, {useRef, useContext} from "react"
 import {Link} from "react-router-dom"
 
 
-const IncomeForm = ({inputText, setInputText, onAdd}) => {
-
+const IncomeForm = (props) => {
   
-    // const incomeRef = useRef()
-    const inputTextHandler = (e) => {
-      setInputText(e.target.value)
+  const incomeRef = useRef()
+  
+  const submitHandler = (e) => {
+    e.preventDefault();
+    const referentIncome = incomeRef
+    if(referentIncome.current.value.trim().length === 0){
+      return alert("Please enter valid information")
     }
-    const submitHandler = (e) => {
-      e.preventDefault();
-      // const referentIncome = incomeRef
-      // if(
-      //   referentIncome.current.value.trim().length === 0
-      // ){
-      //   return alert("Please enter valid information")
-      // }
-      // const incomeData = {
-      //  income: referentIncome.current.value
-      // }
+    const incomeData= {text: referentIncome.current.value};
     
-     const incomeData= inputText
-    onAdd(incomeData)
-      // referentIncome.current.value = " "
+    props.onAdd(incomeData)
+    referentIncome.current.value = " "
     }
    
     return(
@@ -36,9 +37,8 @@ const IncomeForm = ({inputText, setInputText, onAdd}) => {
            <div className="justify-between mx-10">
 
            <input
-            value={inputText}
-            onChange={inputTextHandler}
-            // ref={incomeRef} 
+        
+            ref={incomeRef} 
             className="w-9/12" type="text"/>
            <select >
              <option>Weekly</option>
