@@ -4,12 +4,11 @@ import IncomeForm from "./components/IncomeForm"
 import incomeContext from "./store/income-context"
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 import Income from "./components/Income"
+import Footer from "./components/Footer"
 
 function App() {
 
-  // const{items, setItems} = useContext(incomeContext)
-
-  const [items, setItems] = useState([])
+   const [items, setItems] = useState([])
 
 
   const addIncome = (newItems) => {
@@ -46,8 +45,8 @@ function App() {
           />
         }
       />
-
     </Routes>
+     <Footer />
     </Router>
     </incomeContext.Provider>
 
