@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar"
 import IncomeForm from "./components/IncomeForm"
 import incomeContext from "./store/income-context"
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
-import Income from "./components/Income"
+import IncomeList from "./components/IncomeList"
 import Footer from "./components/Footer"
 
 function App() {
@@ -40,7 +40,7 @@ function App() {
       <Route 
         path="income"
         element={
-          <Income 
+          <IncomeList 
    
           />
         }
