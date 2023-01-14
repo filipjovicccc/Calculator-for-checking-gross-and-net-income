@@ -6,25 +6,42 @@ import image1 from "../assests/img/bank.png";
 
 const IncomeForm = (props) => {
   const [isLinkDisabled, setIsLinkDisabled] = useState(true)
+  const [selectedDate, setSelectedDate] = useState("Weekly");
   
   const incomeRef = useRef()
-  const dateRef = useRef()
+  // const dateRef = useRef()
 
-  
+  // const submitHandler = (e) => {
+  //   e.preventDefault();
+  //   const referentIncome = incomeRef.current.value;
+  //   // const referentDate = dateRef.current.value;
+  //   if(referentIncome.trim().length === 0){
+  //     return alert("Please enter valid information")
+  //   }
+  //   const incomeData = { income: referentIncome, date:selectedDate};
+  //   props.onAdd(incomeData);
+  //   incomeRef.current.value = "";
+  //   // dateRef.current.value = "";
+  //   setIsLinkDisabled(false)
+  // }
   const submitHandler = (e) => {
     e.preventDefault();
-    const referentIncome = incomeRef
-    const referentDate = dateRef
-    if(referentIncome.current.value.trim().length === 0){
+    const referentIncome = incomeRef.current.value;
+    const referentDate = selectedDate;
+    if(referentIncome.trim().length === 0){
       return alert("Please enter valid information")
     }
-    const incomeData=  {income: referentIncome.current.value, date: referentDate.current.value};
-    
-    props.onAdd(incomeData)
-    referentIncome.current.value = " ",
-    referentDate.current.value = ""
+    const incomeData = { income: referentIncome, date: referentDate };
+    props.onAdd(incomeData);
+    incomeRef.current.value = "";
+    setSelectedDate("Weekly");
     setIsLinkDisabled(false)
-    }
+  }
+ 
+
+const handleChange = event => {
+  setSelectedDate(event.target.value);
+}
    
     return(
       <Fragment>
@@ -38,7 +55,7 @@ const IncomeForm = (props) => {
           <div className="flex justify-between items-center">
           <input ref={incomeRef} className="w-full md:w-9/12 border border-gray-400 rounded-lg py-2 px-3" type="text" placeholder="Enter your income here" />
 
-          <select ref={dateRef} className="border border-gray-400 rounded-lg py-2 px-3">
+          <select onChange={handleChange} value={selectedDate}  className="border border-gray-400 rounded-lg py-2 px-3">
               <option>Weekly</option>
               <option>Fortnightly</option>
               <option>Monthly</option>

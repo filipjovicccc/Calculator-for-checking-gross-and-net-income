@@ -80,8 +80,12 @@ const IncomeList =() =>{
     }
   }, [update]);
 
-  const handleUpdate = (index, item) => {
-    setUpdate({ index, item });
+  const handleUpdate = (index, newItem) => {
+    setItems(prevItems => {
+      const newItems = [...prevItems];
+      newItems[index] = newItem;
+      return newItems;
+    });
   };
   
     return(

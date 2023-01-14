@@ -1,6 +1,6 @@
 import React from "react";
 import { BsBank } from "react-icons/bs"
-import { GrMoney } from "react-icons/gr"
+
 const Navbar = () => {
 
     const iconStyle = {fontSize: "1.5em", color: "white"}
