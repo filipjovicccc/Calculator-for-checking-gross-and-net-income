@@ -11,8 +11,8 @@ const IncomeList =() =>{
        
    <div className="flex opacity-85 items-center justify-center h-screen h-screen bg-center bg-cover" style={{backgroundImage: `url(${image2})`}}>
 
-     {items.map(item => {
-        return <Income date={item.date} income={item.income} />
+     {items.map((item, index) => {
+        return <Income key={index} date={item.date} income={item.income} />
            
          
      })}

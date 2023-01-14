@@ -1,7 +1,7 @@
 import React, {useRef, useState, Fragment} from "react"
 import {Link} from "react-router-dom";
 import image1 from "../assests/img/bank.png";
-import { BsBank } from "react-icons/bs"
+
 
 
 const IncomeForm = (props) => {
