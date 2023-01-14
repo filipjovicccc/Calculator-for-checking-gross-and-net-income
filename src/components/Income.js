@@ -112,29 +112,3 @@ const grossAnnually = annual + taxAnnual;
 
 export default Income
     
-//         <div className="w-7/12 h-1/2 bg-green-500 p-4 rounded-lg shadow-lg flex flex-col">
-//             <table className="table-auto w-full m-auto">
-//                 <thead className="bg-gray-200">
-//                     <tr>
-//                         <th className="px-4 text-left bg-red-500 py-2 text-white font-medium">Frequency</th>
-//                         <th className="px-4 text-left bg-red-500 py-2 text-white font-medium">Gross income</th>
-//                         <th className="px-4 text-left bg-red-500 py-2 text-white font-medium">Tax</th>
-//                         <th className="px-4 text-left bg-red-500 py-2 text-white font-medium">Net income</th>
-//                     </tr>
-//                 </thead>
-//                 <tbody>
-//                     {incomeData
-//                         .filter(data => data.frequency === props.date)
-//                         .map((data, index) => (
-//                             <tr key={index}>
-//                                 <td className="border px-4 xs py-2">{data.frequency}</td>
-//                                 <td className="border px-4 -xs py-2">{data.grossIncome}</td>
-//                                 <td className="border px-4 xs py-2">{data.tax}</td>
-//         <td className="border px-4 xs py-2">{data.netIncome}</td>
-//         </tr>
-//     ))}
-//            </tbody>
-// </table>
-// </div>
-// )
-// }
