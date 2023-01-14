@@ -2,56 +2,6 @@ import React, {useState, useEffect} from "react"
 
 const Income =(props) =>{
 
-//  const [week, setWeek] = useState()
-//  const [fortnightly, setFortnightly] = useState()
-//  const [month, setMonthly] = useState()
-//  const [annual, setAnnual] = useState()
-//  useEffect(() => {
-//     if(props.date === "Weekly"){
-//         setWeek(Math.round(+props.income))
-//         setFortnightly(Math.round(props.income * 2))
-//         setMonthly(Math.round(props.income * 4))
-//         setAnnual(Math.round(props.income * 52))
-//     }
-//  }, [props.date])
-//  useEffect(() => {
-//     if(props.date === "Fortnightly"){
-//         setFortnightly(Math.round(+props.income))
-//         setWeek(Math.round(props.income / 2))
-//         setMonthly(Math.round(props.income * 2))
-//         setAnnual(Math.round(props.income * 26))
-//     }
-//  }, [props.date])
-//  useEffect(() => {
-//     if(props.date === "Monthly"){
-//         setMonthly(Math.round(+props.income))
-//         setWeek(Math.round(props.income / 4))
-//         setFortnightly(Math.round(props.income /2))
-//         setAnnual(Math.round(props.income * 13))
-//     }
-// }, [props.date])
-// useEffect(() => {
-//     if(props.date === "Annually"){
-//         setAnnual(Math.round(+props.income))
-//         setWeek(Math.round(props.income / 52))
-//         setFortnightly(Math.round(props.income / 26))
-//         setMonthly(Math.round(props.income /13))
-//     }
-// }, [props.date])
-
-  
-// const taxWeek = week * 0.22
-// const grossWeek = week + taxWeek
-
-// const taxFortnightly = fortnightly * 0.22
-// const grossFortnightly = taxFortnightly + fortnightly
-
-// const taxMonth = month * 0.22
-// const grossMonthly = month + taxMonth
-
-// const taxAnnual = annual * 0.22
-// const grossAnnually = annual + taxAnnual
-
 const [week, setWeek] = useState();
 const [fortnightly, setFortnightly] = useState();
 const [month, setMonthly] = useState();
