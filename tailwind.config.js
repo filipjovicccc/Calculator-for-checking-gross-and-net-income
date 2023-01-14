@@ -27,7 +27,8 @@ module.exports = {
        },
        colors: {
         primary: 'FD0202',
-        secondary: "594FB1"
+        secondary: "594FB1",
+        darkGray: "323233"
     
        }
     },

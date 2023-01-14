@@ -1,7 +1,7 @@
 import {createContext} from "react"
 
  const incomeContext = createContext({
-    items:[],
+    items:[ {income: 1000, date: "Monthly"}],
     setItems: () => {}
 }
 )

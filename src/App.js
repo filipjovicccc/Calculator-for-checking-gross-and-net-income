@@ -10,12 +10,19 @@ function App() {
 
    const [items, setItems] = useState([])
 
+const addIncome = (newItem) => {
+  setItems(prevItems => {
+    const index = prevItems.findIndex(item => item.date === newItem.date);
+    if (index === -1) {
+      return [...prevItems, newItem];
+    } else {
+      const newItems = [...prevItems];
+      newItems[index] = newItem;
+      return newItems;
+    }
+  });
+}
 
-  const addIncome = (newItems) => {
- setItems((prevItems) =>{
-  return prevItems.concat(newItems)
- })
-  }
   const incomeContextValue = {
     items,
     setItems,
@@ -38,7 +45,7 @@ function App() {
 
        />
       <Route 
-        path="income"
+        path="/income"
         element={
           <IncomeList 
    

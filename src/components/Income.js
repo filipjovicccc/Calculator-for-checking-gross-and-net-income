@@ -54,7 +54,7 @@ const grossAnnually = annual + taxAnnual;
  
   return(
        
-        <div className="w-7/12 h-1/2 sm:block md:table-auto md:table-fixes bg-green-500
+        <div className="w-7/12 h-1/2 sm:block md:table-auto md:table-fixes bg-gray-500
         p-4 rounded-lg shadow-lg flex flex-col" >
 
         <div className="flex w-3/6  flex-row border-solid border-black">
