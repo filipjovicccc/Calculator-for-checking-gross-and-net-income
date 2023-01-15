@@ -10,10 +10,10 @@ import Footer from "./components/Footer"
 function App() {
 
    const [items, setItems] = useState([
-    { income: '1000', group: 'Weekly',  },
-    { income: '2000', group: 'Fortnightly',  },
-    { income: '3000', group: 'Monthly',  }
   ])
+  // { income: '1000', group: 'Weekly',  },
+  // { income: '2000', group: 'Fortnightly',  },
+  // { income: '3000', group: 'Monthly',  }
   //  const [selectedGroup, setSelectedGroup] = useState("Weekly");
 
 // const addIncome = (newItem) => {
@@ -31,7 +31,7 @@ function App() {
 
 const addIncome = (newItem) => {
   if (!newItem.group) {
-    console.error('missing group property');
+    console.error('Error: missing group property');
     return;
   }
   setItems(prevItems => {

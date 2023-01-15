@@ -57,14 +57,12 @@ const grossAnnually = annual + taxAnnual;
         <div className="w-7/12 h-1/2 sm:block md:table-auto md:table-fixes bg-gray-500
         p-4 rounded-lg shadow-lg flex flex-col" >
 
-        <button className="bg-green-500 text-white  flex self-start  py-2 px-4 rounded-lg mr-2 sm:mr-0 md:mr-2 lg:mr-4 xl:mr-6"  onClick={() => setFormIsVisible(!formIsVisible)}>
-        {formIsVisible ? 'Income-details' : ''}
+        <button className="bg-green-500 text-white  flex self-start  py-2 px-4 rounded-lg mr-2 sm:mr-0 md:mr-2 lg:mr-4 xl:mr-6"  onClick={() => props.setFormIsVisible(!props.formIsVisible)}>
+        {props.formIsVisible ? 'Income-details' : ''}Income-details
       </button>
-      <h1>Hellllllo</h1>
+     
         <div className="flex w-3/6  flex-row border-solid border-black">
-      <button className="bg-green-500 text-white  flex self-start  py-2 px-4 rounded-lg mr-2 sm:mr-0 md:mr-2 lg:mr-4 xl:mr-6"  onClick={() => setFormIsVisible(!formIsVisible)}>
-        {formIsVisible ? 'Income-details' : ''}
-      </button>
+     
         <div  className="w-28 h-16 text-white text-2xl  flex justify-center items-center bg-red-500 mt-20">${(props.income)}</div>
         <div className="w-28 h-16 text-white text-2xl  flex justify-center items-center bg-red-500 mt-20">{(props.group)}</div>    
 

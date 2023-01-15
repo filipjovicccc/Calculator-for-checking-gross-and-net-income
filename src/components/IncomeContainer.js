@@ -4,11 +4,13 @@ import IncomeList from './IncomeList';
 
 function IncomeContainer({ onAdd, items }) {
   const [formIsVisible, setFormIsVisible] = useState(true);
-  const [selectedGroup, setSelectedGroup] = useState("Weekly");
+  const [selectedGroup, setSelectedGroup] = useState("Monthly");
+  const [selectedIncomeType, setSelectedIncomeType] = useState("Net")
     
-  const handleChange = (event) => {
-    setSelectedGroup(event.target.value);
+  const handleIncomeType = (e) => {
+    setSelectedIncomeType(e.target.value)
   }
+    
 
 
   return (
@@ -16,9 +18,9 @@ function IncomeContainer({ onAdd, items }) {
  
       
       {formIsVisible ? (
-        <IncomeForm formIsVisible={formIsVisible} setFormIsVisible={setFormIsVisible} onAdd={onAdd} handleChange={handleChange}  selectedGroup={selectedGroup} setSelectedGroup={setSelectedGroup}  />
+        <IncomeForm handleIncome={handleIncomeType} formIsVisible={formIsVisible} setFormIsVisible={setFormIsVisible} onAdd={onAdd}  selectedGroup={selectedGroup} setSelectedGroup={setSelectedGroup}  />
       ) : (
-        <IncomeList formIsVisible={formIsVisible} setFormIsVisible={setFormIsVisible} items={items}  selectedGroup={selectedGroup} />
+        <IncomeList selectedIncomeType={selectedIncomeType} formIsVisible={formIsVisible} setFormIsVisible={setFormIsVisible} items={items}  selectedGroup={selectedGroup} />
       )}
     </div>
   );
