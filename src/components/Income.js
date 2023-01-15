@@ -8,8 +8,8 @@ const [month, setMonthly] = useState();
 const [annual, setAnnual] = useState();
 
 useEffect(() => {
-  const calculateIncome = (frequency, income) => {
-    switch (frequency) {
+  const calculateIncome = (group, income) => {
+    switch (group) {
       case "Weekly":
         setWeek(Math.round(income));
         setFortnightly(Math.round(income * 2));
@@ -37,8 +37,8 @@ useEffect(() => {
     }
   };
 
-  calculateIncome(props.date, +props.income);
-}, [props.date, props.income]);
+  calculateIncome(props.group, +props.income);
+}, [props.group, props.income]);
 
 const taxWeek = week * 0.22;
 const grossWeek = week + taxWeek;
@@ -57,9 +57,16 @@ const grossAnnually = annual + taxAnnual;
         <div className="w-7/12 h-1/2 sm:block md:table-auto md:table-fixes bg-gray-500
         p-4 rounded-lg shadow-lg flex flex-col" >
 
+        <button className="bg-green-500 text-white  flex self-start  py-2 px-4 rounded-lg mr-2 sm:mr-0 md:mr-2 lg:mr-4 xl:mr-6"  onClick={() => setFormIsVisible(!formIsVisible)}>
+        {formIsVisible ? 'Income-details' : ''}
+      </button>
+      <h1>Hellllllo</h1>
         <div className="flex w-3/6  flex-row border-solid border-black">
+      <button className="bg-green-500 text-white  flex self-start  py-2 px-4 rounded-lg mr-2 sm:mr-0 md:mr-2 lg:mr-4 xl:mr-6"  onClick={() => setFormIsVisible(!formIsVisible)}>
+        {formIsVisible ? 'Income-details' : ''}
+      </button>
         <div  className="w-28 h-16 text-white text-2xl  flex justify-center items-center bg-red-500 mt-20">${(props.income)}</div>
-        <div className="w-28 h-16 text-white text-2xl  flex justify-center items-center bg-red-500 mt-20">{(props.date)}</div>    
+        <div className="w-28 h-16 text-white text-2xl  flex justify-center items-center bg-red-500 mt-20">{(props.group)}</div>    
 
         </div>
 

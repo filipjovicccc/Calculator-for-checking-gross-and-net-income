@@ -10,7 +10,7 @@ const Navbar = () => {
         <h1 className="text-white">Income calculator</h1>
         <div className="flex justify-between w-20"><BsBank style={iconStyle}/>
        </div>
-
+      
         
         </div>
     )
