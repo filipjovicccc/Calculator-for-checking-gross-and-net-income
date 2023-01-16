@@ -58,7 +58,7 @@ console.log(props.selectedIncomeType)
   return(
         <div className="flex items-center justify-center">
         <div className="w-3/5 md:w-7/12 h-2/5 bg-gray-500 p-10 absolute p-4 rounded-lg shadow-lg flex flex-col sm:min-h-2/5  overflow-hidden" >
-        <button className="bg-green-500 text-white hover:bg-darkGray-500 flex self-start  py-2 px-4 rounded-lg mr-2 sm:mr-0 md:mr-2 lg:mr-4 xl:mr-6"  onClick={() => props.setFormIsVisible(!props.formIsVisible)}>
+        <button className="bg-green-500 text-white hover:bg-darkGray flex self-start  py-2 px-4 rounded-lg mr-2 sm:mr-0 md:mr-2 lg:mr-4 xl:mr-6"  onClick={() => props.setFormIsVisible(!props.formIsVisible)}>
         {props.formIsVisible ? 'Income-details' : ''}Income-details
       </button>
         <div className="flex w-3/6  flex-row border-solid border-black">
