@@ -6,8 +6,7 @@ import Income from "./Income"
 const IncomeList =(props) =>{
  
   const [update, setUpdate] = useState(null);
-  // const filteredItems = props.items.filter((item) => item.group === props.selectedGroup);
-  const filteredItems = useMemo(() => {
+   const filteredItems = useMemo(() => {
     return props.items.filter((item) => item.group === props.selectedGroup);
 }, [props.items, props.selectedGroup]);
 
@@ -22,7 +21,7 @@ const IncomeList =(props) =>{
   }, [update]);
 
   const handleUpdate = (index, newItem) => {
-    props.setItems(prevItems => {
+      props.setItems(prevItems => {
       const newItems = [...prevItems];
       newItems[index] = newItem;
       return newItems;
@@ -31,17 +30,19 @@ const IncomeList =(props) =>{
   
     return(
        
-   <div className="flex  opacity-85 items-center justify-center h-screen bg-center bg-cover" style={{backgroundImage: `url(${image2})`}} >
+   <div className="flex opacity-85 items-center justify-center h-screen bg-center bg-cover" style={{backgroundImage: `url(${image2})`}} >
 
      {filteredItems.map((item, index) => {
            
      return <Income 
+
+     selectedIncomeType={props.selectedIncomeType}
      formIsVisible={props.formIsVisible} 
      setFormIsVisible={props.setFormIsVisible} 
      key={index} group={item.group} 
      income={item.income}
      handleUpdate={handleUpdate} 
-      index={index} />
+     index={index} />
          
      })}
      

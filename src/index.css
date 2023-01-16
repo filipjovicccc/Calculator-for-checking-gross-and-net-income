@@ -10,3 +10,15 @@ body{
     margin: 0;
     height: 100vh;
 }
+
+.main-div {
+    width: 7/12;
+    height: 1/2;
+  }
+  
+  @media (min-width: 768px) {
+    .main-div {
+      width: 60%;
+      height: 80%;
+    }
+  }

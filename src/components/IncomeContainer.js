@@ -5,13 +5,12 @@ import IncomeList from './IncomeList';
 function IncomeContainer({ onAdd, items }) {
   const [formIsVisible, setFormIsVisible] = useState(true);
   const [selectedGroup, setSelectedGroup] = useState("Monthly");
-  const [selectedIncomeType, setSelectedIncomeType] = useState("Net")
+  const [selectedIncomeType, setSelectedIncomeType] = useState("")
     
-  const handleIncomeType = (e) => {
-    setSelectedIncomeType(e.target.value)
+  const handleIncomeType = (incomeType) => {
+    setSelectedIncomeType(incomeType)
   }
     
-
 
   return (
     <div className="flex flex-col justify-around">

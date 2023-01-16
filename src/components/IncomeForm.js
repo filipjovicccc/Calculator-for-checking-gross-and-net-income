@@ -1,12 +1,10 @@
-import React, {useRef, useState, Fragment} from "react"
-import {Link} from "react-router-dom";
+import React, { Fragment} from "react"
+
 import image1 from "../assests/img/bank.png";
 
-// const [isLinkDisabled, setIsLinkDisabled] = useState(true)
-// const [selectedDate, setSelectedDate] = useState("Weekly");
 
 
-const IncomeForm = ({formIsVisible, onAdd, setSelectedGroup, selectedGroup, setFormIsVisible, handleIncome}) => {
+const IncomeForm = ({ handleIncome, onAdd, setSelectedGroup, selectedGroup, setFormIsVisible, }) => {
   
 
  
@@ -39,7 +37,7 @@ const IncomeForm = ({formIsVisible, onAdd, setSelectedGroup, selectedGroup, setF
   <main className="flex items-center justify-center h-screen bg-center bg-cover" style={{ backgroundImage: `url(${image1})` }}>
         
     <div className="w-full md:w-7/12 h-2/5 bg-gray-500 p-10 absolute p-4 rounded-lg shadow-lg flex flex-col">
-    <div className="bg-green-500 text-white  flex self-start py-2 px-4 rounded-lg mr-2 sm:mr-0 md:mr-2 lg:mr-4 xl:mr-6">Income</div>
+    <div className="bg-green-500 text-white hover:bg-darkGray  flex self-start py-2 px-4 rounded-lg mr-2 sm:mr-0 md:mr-2 lg:mr-4 xl:mr-6">Income</div>
       <h1 className="text-2xl font-medium text-center">Income Tax Calculator</h1>
       <form onSubmit={submitHandler} className="mt-4 divide-y divide-gray-400">
         <div className="py-2">
@@ -59,13 +57,13 @@ const IncomeForm = ({formIsVisible, onAdd, setSelectedGroup, selectedGroup, setF
           <h1 className="text-black-700 font-medium">Please choose the income type</h1>
           <div className="flex items-center mt-5 justify-center">
 
-          <button  className="bg-green-500 text-white  py-2 px-4 rounded-lg mr-2 sm:mr-0 md:mr-2 lg:mr-4 xl:mr-6">Gross Income</button>
-    <button className="bg-green-500 text-white py-2 px-4 rounded-lg sm:ml-0 md:ml-2 lg:ml-4 xl:ml-6">Net Income</button>
+          <button type="button" onClick={()=> handleIncome("Gross")}  className="bg-green-500 hover:bg-darkGray text-white  py-2 px-4 rounded-lg mr-2 sm:mr-0 md:mr-2 lg:mr-4 xl:mr-6">Gross Income</button>
+    <button type="button" onClick={()=> handleIncome("Net")} className="bg-green-500 hover:bg-darkGray text-white py-2 px-4 rounded-lg sm:ml-0 md:ml-2 lg:ml-4 xl:ml-6">Net Income</button>
   </div>
   </div>
  <div className="py-2 flex items-center">
 
-  <button type="submit" className="bg-darkGray text-white  w-96 flex  items-center justify-center my-auto mt-10 mx-32 text-center py-2 px-5 rounded-lg mr-3 sm:mr-0 md:mr-2 lg:mr-4 xl:mr-6">Calculate</button>
+  <button type="submit" className="bg-darkGray text-white  w-96 flex hover:bg-red-500  items-center justify-center my-auto mt-10 mx-32 text-center py-2 px-5 rounded-lg mr-3 sm:mr-0 md:mr-2 lg:mr-4 xl:mr-6">Calculate</button>
  </div>
   </form>
             </div>
@@ -77,4 +75,3 @@ const IncomeForm = ({formIsVisible, onAdd, setSelectedGroup, selectedGroup, setF
   }
   
   export default IncomeForm
-  //  ${isLinkDisabled ? 'pointer-events-none' : "" }

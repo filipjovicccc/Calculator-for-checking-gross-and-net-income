@@ -4,8 +4,6 @@ import { GiBanknote } from "react-icons/gi"
 import {GrApple} from "react-icons/gr"
 
 
-
-
 const Footer = () => {
       
     const footerIcon = {fontSize: "3em", color: "white"}
