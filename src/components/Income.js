@@ -51,8 +51,7 @@ const grossMonthly = month + taxMonth;
 
 const taxAnnual = annual * 0.22;
 const grossAnnually = annual + taxAnnual
-console.log(props.income)
-console.log(props.selectedIncomeType)
+
 
  
   return(
