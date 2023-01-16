@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react"
+import React, { useState} from "react"
 import Navbar from "./components/Navbar"
 import IncomeContainer from "./components/IncomeContainer"
 import Footer from "./components/Footer"
@@ -7,7 +7,6 @@ function App() {
 
    const [items, setItems] = useState([
   ])
-
 
 const addIncome = (newItem) => {
   if (!newItem.group) {
@@ -26,7 +25,6 @@ const addIncome = (newItem) => {
     }
   });
 }
-
 
   return (
     <div className= "relative">

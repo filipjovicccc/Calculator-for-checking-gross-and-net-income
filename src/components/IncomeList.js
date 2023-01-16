@@ -2,7 +2,6 @@ import React, {  useState, useEffect, useMemo } from "react"
 import image2 from "../assests/img/bank.png"
 import Income from "./Income"
 
-
 const IncomeList =(props) =>{
  
   const [update, setUpdate] = useState(null);
@@ -46,7 +45,7 @@ const IncomeList =(props) =>{
          
      })}
      
-          </div>
+    </div>
  
     )
 }

@@ -10,9 +10,7 @@ function IncomeContainer({ onAdd, items }) {
   const handleIncomeType = (incomeType) => {
     setSelectedIncomeType(incomeType)
   }
-    
-
-  return (
+     return (
     <div className="flex flex-col justify-around">
  
       
